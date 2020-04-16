@@ -5,11 +5,11 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def home():
-    return render_template('home.html', default_password=generate_password())
+    return render_template('home.html', default_password=generate_password(), title='Home')
 
 @app.route('/about', methods=['GET'])
 def about():
-    return render_template('about.html')
+    return render_template('about.html', title='About')
 
 @app.route('/create-password', methods=['GET'])
 def create_password():
