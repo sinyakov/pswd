@@ -11,10 +11,9 @@ def home():
 def about():
     return render_template('about.html')
 
-@app.route('/api/create-password', methods=['POST'])
+@app.route('/create-password', methods=['GET'])
 def create_password():
-    password_options = dict(request.form)
-    print(password_options)
+    password_options = request.args.to_dict()
     return generate_password(**password_options)
 
 
