@@ -66,3 +66,12 @@ button {
   padding: 2px 20px;
   cursor: pointer;
 }
+
+a {
+  color: white;
+}
+
+.transparent {
+  color: #111;
+  transition: color 1s ease-in-out;
+}
