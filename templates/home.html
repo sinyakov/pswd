@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+<h1>{{ title }}</h1>
+<form>
+  <fieldset name="passwordOptions">
+    <legend>Generate password</legend>
+    <label>
+      Password length
+      <input name="length" id="username" type="number" value="12" min="6" max="24" />
+    </label>
+    <label>
+      With numbers
+      <input name="withNumbers" type="checkbox" />
+    </label>
+    <label>
+      With symbols
+      <input name="withSymbols" type="checkbox" />
+    </label>
+    <label>
+      Exclude similar characters
+      <input name="excludeSimilarCharacters" type="checkbox" />
+    </label>
+    <button type="submit">Generate</button>
+  </fieldset>
+</form>
+
+<div class="password">
+  {{ default_password }}
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}

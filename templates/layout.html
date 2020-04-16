@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{% block title %}{% endblock %} - GenPass</title>
+    {% endblock %}
+  </head>
+  <body>
+    <div class="content">{% block content %}{% endblock %}</div>
+    <div class="footer">
+      {% block footer %}
+      &copy; Max Sinyakov
+      {% endblock %}
+    </div>
+  </body>
+</html>
